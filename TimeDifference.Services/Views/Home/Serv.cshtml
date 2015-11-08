@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Serv";
+}
+
+
+<body>
+    <button onclick="UserInfo()">Check user Info</button>
+    <button onclick="GetUsers()">Check user Info</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        debugger;
+        var token = "";
+
+        function GetUsers() {
+
+            debugger;
+            $.ajax({
+                url: 'http://localhost:56189/api/Manager/GetAllUsers?pageNo=1&records=10',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                headers: { "token": token },
+                //data: JSON.stringify({ Email: "makeshift007@gmail.com", Password: "123456789" }),
+                success: function (data, status, xhr) {
+                    debugger;
+                    //response(data.d);
+                },
+                error: function (result) {
+                    debugger;
+                    alert(result);
+                }
+            });
+
+        }
+
+
+
+
+
+
+
+        function UserInfo() {
+            debugger;
+            $.ajax({
+                url: 'http://localhost:56189/api/User/GetUserInformation',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                headers: { "token": token },
+                //data: JSON.stringify({ Email: "makeshift007@gmail.com", Password: "123456789" }),
+                success: function (data, status, xhr) {
+                    debugger;
+                    //response(data.d);
+                },
+                error: function (result) {
+                    debugger;
+                    alert(result);
+                }
+            });
+        }
+
+
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://localhost:56189/api/Authenticate/AuthenticateToken',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                headers: { Authorization: "Basic " + btoa("manager@gmail.com:123456789") },
+                //data: JSON.stringify({ Email: "makeshift007@gmail.com", Password: "123456789" }),
+                success: function (data, status, xhr) {
+                    debugger;
+                    token = xhr.getResponseHeader("token");
+                    //response(data.d);
+                },
+                error: function (result) {
+                    debugger;
+                    alert(result);
+                }
+            });
+
+        });
+    </script>
+
+</body>

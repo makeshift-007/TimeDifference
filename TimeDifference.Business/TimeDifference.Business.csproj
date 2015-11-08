@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A16D788F-F179-4FD5-9FAF-33DFFACF1E7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeDifference.Business</RootNamespace>
+    <AssemblyName>TimeDifference.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="TimeZoneEntryMethods.cs" />
+    <Compile Include="TokenServices.cs" />
+    <Compile Include="UserMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resolver\Resolver.csproj">
+      <Project>{6cfc3977-2553-4c4e-a212-01f11c3f7543}</Project>
+      <Name>Resolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeDifference.BusinessClasses\TimeDifference.BusinessClasses.csproj">
+      <Project>{0283baa0-2e99-43d6-9f36-ee75202d6a98}</Project>
+      <Name>TimeDifference.BusinessClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeDifference.Common\TimeDifference.Common.csproj">
+      <Project>{DA853FDE-0CC2-4FE9-81B6-F8B9F1A6AFEA}</Project>
+      <Name>TimeDifference.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeDifference.Data\TimeDifference.Data.csproj">
+      <Project>{8e5401cd-dc4e-449a-abcf-d3b5da00f615}</Project>
+      <Name>TimeDifference.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeDifference.Entity\TimeDifference.Entity.csproj">
+      <Project>{52655ec6-53bb-4ebc-b340-7a01afca364d}</Project>
+      <Name>TimeDifference.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
