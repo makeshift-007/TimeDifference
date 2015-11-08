@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resolver", "Resolver\Resolv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDifference.Common", "TimeDifference.Common\TimeDifference.Common.csproj", "{DA853FDE-0CC2-4FE9-81B6-F8B9F1A6AFEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDifference.Tests", "TimeDifference.Tests\TimeDifference.Tests.csproj", "{3CD96E71-4F24-4374-9565-A7756A0105A6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,10 +51,6 @@ Global
 		{DA853FDE-0CC2-4FE9-81B6-F8B9F1A6AFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA853FDE-0CC2-4FE9-81B6-F8B9F1A6AFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA853FDE-0CC2-4FE9-81B6-F8B9F1A6AFEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CD96E71-4F24-4374-9565-A7756A0105A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CD96E71-4F24-4374-9565-A7756A0105A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CD96E71-4F24-4374-9565-A7756A0105A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CD96E71-4F24-4374-9565-A7756A0105A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
